@@ -4,7 +4,7 @@ metadata:
   name: sdo
 spec:
   rules:
-  - host: https://sdo.38.cc.ucll.cloud  # Update with your desired domain
+  - host: sdo.38.cc.ucll.cloud  # Update with your desired domain
     http:
       paths:
       - path: /
