@@ -5,4 +5,5 @@ FROM nginx:latest
 COPY index.html /usr/share/nginx/html/index.html
 COPY documentation.html /usr/share/nginx/html/documentation.html
 COPY report.html /usr/share/nginx/html/report.html
-COPY image.jpg /usr/share/nginx/html/image.jpg
+COPY todo.html /usr/share/nginx/html/todo.html
+COPY smooth.jpg /usr/share/nginx/html/smooth.jpg
