@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: k8s
+    path: k8s/main
     repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
     targetRevision: HEAD
   info:
