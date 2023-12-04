@@ -15,5 +15,6 @@ spec:
       containers:
       - name: sdoqa
         image: delsynn/sdo:qa
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
