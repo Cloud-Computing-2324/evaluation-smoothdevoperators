@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sdo
+  name: sdomain
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sdo
+      app: sdomain
   template:
     metadata:
       labels:
-        app: sdo
+        app: sdomain
     spec:
       containers:
-      - name: sdo
+      - name: sdomain
         image: delsynn/sdo:main
         ports:
         - containerPort: 80
