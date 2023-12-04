@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: sdoqa
-        image: delsynn/sdo:aq
+        image: delsynn/sdo:qa
         ports:
         - containerPort: 80
