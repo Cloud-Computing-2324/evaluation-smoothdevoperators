@@ -1,0 +1,10 @@
+{
+    "extends": ["config:base"],
+    "semanticCommits": true,
+    "packageRules": [
+      {
+        "updateTypes": ["minor", "patch"],
+        "semanticCommits": true
+      }
+    ]
+  }  
