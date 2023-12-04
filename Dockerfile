@@ -1,6 +1,9 @@
 # Use the official Nginx image as the base image
 FROM nginx:latest
 
+# Permissions
+RUN chown -R nginx:nginx /usr/share/nginx/html
+
 # Copy the local index.html file to the Nginx document root
 COPY index.html /usr/share/nginx/html/index.html
 COPY documentation.html /usr/share/nginx/html/documentation.html
