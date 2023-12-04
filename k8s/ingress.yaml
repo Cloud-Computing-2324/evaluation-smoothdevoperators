@@ -11,6 +11,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            app: sdo
+            name: sdo
             port:
               number: 80
