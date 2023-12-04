@@ -15,5 +15,6 @@ spec:
       containers:
       - name: sdodev
         image: delsynn/sdo:dev
+        imagePullPolicy: Always
         ports:
         - containerPort: 80

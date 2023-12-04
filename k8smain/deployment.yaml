@@ -15,5 +15,6 @@ spec:
       containers:
       - name: sdomain
         image: delsynn/sdo:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
