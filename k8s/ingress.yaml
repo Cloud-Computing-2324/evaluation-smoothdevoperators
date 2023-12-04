@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: SDO
+  name: sdo
 spec:
   rules:
   - host: https://sdo.38.cc.ucll.cloud  # Update with your desired domain
@@ -11,6 +11,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: SDO
+            name: sdo
             port:
               number: 80
