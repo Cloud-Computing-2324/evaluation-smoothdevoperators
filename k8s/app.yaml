@@ -1,27 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: wiki
+  name: SDO
   namespace: argo
 spec:
-  sources:
-  - repoURL: https://charts.js.wiki
-    chart: wiki
-    targetRevision: 2.2.20
-    helm:
-      valueFiles:
-        - $values/01_WIKI/values.yaml
-  - repoURL: 'https://github.com/Cloud-Computing-2324/deployment-exercises-Delsynn.git'
-    targetRevision: main
-    ref: values
   destination:
-    server: 'https://kubernetes.default.svc'
-    namespace: wiki
+    namespace: SDO
+    server: https://kubernetes.default.svc
   project: default
+  source:
+    path: k8s
+    repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
+    targetRevision: HEAD
   info:
-    - name: 'wiki'
-      value: 'https://wiki.47.cc.ucll.cloud'
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    - name: 'SDO'
+      value: 'https://sdo.38.cc.ucll.cloud'
+
