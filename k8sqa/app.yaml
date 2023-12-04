@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sdoqa
+  namespace: argo
+spec:
+  destination:
+    namespace: sdoqa
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: k8sqa
+    repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
+    targetRevision: qa
+  info:
+    - name: 'sdoqa'
+      value: 'https://sdoqa.38.cc.ucll.cloud'
+
