@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: sdomain
-        image: delsynn/sdo:main
+        image: delsynn/sdo:latest
         ports:
         - containerPort: 80
