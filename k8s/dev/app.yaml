@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sdo
+  namespace: argo
+spec:
+  destination:
+    namespace: sdo
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: k8s
+    repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
+    targetRevision: dev
+  info:
+    - name: 'sdo'
+      value: 'https://sdo.38.cc.ucll.cloud'
+
