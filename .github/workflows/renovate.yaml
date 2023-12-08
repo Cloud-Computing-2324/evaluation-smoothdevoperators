@@ -2,7 +2,7 @@ name: Renovate
 
 on:
   schedule:
-    - cron: "15 9 * * *"
+    - cron: "20 9 * * *"
 
 jobs:
   renovate:
