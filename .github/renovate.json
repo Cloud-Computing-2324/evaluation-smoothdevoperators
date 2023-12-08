@@ -3,7 +3,8 @@
     "packageRules": [
       {
         "updateTypes": ["minor", "patch"],
-        "semanticCommits": true
+        "semanticCommits": true,
+        "timezone": "Europe/Brussels"
       }
     ]
   }  
