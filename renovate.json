@@ -1,9 +1,0 @@
-{
-    "extends": ["/.github/config:base"],
-    "packageRules": [
-      {
-        "updateTypes": ["minor", "patch"],
-        "semanticCommits": true
-      }
-    ]
-  }  
