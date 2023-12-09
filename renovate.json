@@ -1,5 +1,5 @@
 {
-    "extends": ["config:base"],
+    "extends": ["/.github/config:base"],
     "packageRules": [
       {
         "updateTypes": ["minor", "patch"],
