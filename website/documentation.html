@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevTestingEnv</title>
-	<!--<link rel="stylesheet" type="text/css" href="style.css">-->
-
-    
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
-<body style="background-color: grey;">
-
-    <div>
-        <img src="smooth.jpg" alt="smoooooooooooooooooooooooooooooooth operatoooooooooooooooooooooor" width="100%" height="300">
-    </div>
-
-    <header id="main-header">
-	    <div class="links">
-            <h1><a href="index.html" style="text-decoration: none; color: black;">Useful links</a></h1>
-		<ul>
+<body>
+    <header>
+        <nav>
+	    	<ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="documentation.html" style="color: #f74040;">Documentation</a></li>
+                <li><a href="todo.html">TODO</a></li>
+                <li><a href="report.html">Report</a></li>
+	    	</ul>
+	    </nav>
+    </header>
+	<div class="links">
+        <h1>Useful links</a></h1>
+	    <ul>
             <li><a href="https://www.youtube.com/watch?v=uqjWkjp1kxQ">Smooooooth operators</a></li>
             <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Smooth operator</a></li>
             <h2>Github Actions, CI/CD</h2>
@@ -28,13 +27,13 @@
                 <li><a href="https://education.github.com/git-cheat-sheet-education.pdf">Git cheat sheet</a></li>
                 <li><a href="https://github.blog/2022-02-02-build-ci-cd-pipeline-github-actions-four-steps/">How to build a CI/CD pipeline with GitHub Actions in four simple steps</a></li>
                 <li><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/#terminology">Kubernetes Ingress explanation</a></li>
-                
-                <h2>Argo Rollouts (ArgoCD)</h2>
+            <h2>Argo Rollouts (ArgoCD)</h2>
                 <li><a href="https://argo-cd.readthedocs.io/en/stable/getting_started/">[TUTORIAL] ArgoCD Getting started</a></li>
                 <li><a href="https://argo-rollouts.readthedocs.io/en/stable/getting-started/">[TUTORIAL] Argo rollouts Getting started</a></li>
                 <li><a href="https://argo-rollouts.readthedocs.io/en/stable/">Argo Rollouts - Kubernetes Progressive Delivery Controller</a></li>
             <h2>Renovatebot</h2>
                 <li><a href="https://docs.renovatebot.com/modules/platform/github/">[TUTORIAL] How to install renovatebot</a></li>
+                <li><a href="https://semver.org/">https://developer.mend.io/</a></li> 
                 <li><a href="https://docs.renovatebot.com/modules/versioning/#semantic-versioning">Renovatebot Semantic versioning </a></li> 
                 <li><a href="https://semver.org/">Semantic versioning basic explanation</a></li> 
             <h2>Gateway-API</h2>
@@ -42,36 +41,22 @@
                 <li><a href="https://gateway-api.sigs.k8s.io/">gateway-api</a></li>
                 <li><a href="https://gateway-api.sigs.k8s.io/api-types/gatewayclass/">GateWayClass API type</a></li>
                 <li><a href="https://gateway-api.sigs.k8s.io/concepts/use-cases/#basic-northsouth-use-case">use cases (uitleg hoe implementeren)</a></li>
-                
             <h2>KEDA autoscaling</h2>
                 <li><a href="https://keda.sh/docs/2.12/deploy/#helm">[TUTORIAL] How to deploy KEDA using Yaml or Helm files</a></li>
                 <li><a href="https://www.youtube.com/watch?v=NyaffVfRzLo">[TUTORIAL] Keda with prometheus integration</a></li>
                 <li><a href="https://keda.sh/docs/2.9/concepts/scaling-deployments/#triggers">Triggers explanation (PAS OP! v2.9 ipv 2.12)</a></li>
                 <li><a href="https://keda.sh/docs/2.12/scalers/cron/">[TUTORIAL] Cron scaler</a></li>
                 <li><a href="https://keda.sh/docs/2.12/scalers/kubernetes-workload/">KEDA Kubernetes Workload Trigger Specification</a></li>
-                
                 <li><a href="https://stackoverflow.com/questions/75210091/keda-with-prometheus-integration">Keda with prometheus integration</a></li>
-                
-            
-            
-            
-            
-           
-            
-		</ul>
-		</div>	
-    </header>
+	    </ul>
+	</div>	
 <!--
     <main>
         <section id="CICD">
             <h1>To-Do</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </section>
-		
-
-
     </main>
-
 	<script>
         window.addEventListener('scroll', function () {
             var header = document.getElementById('main-header');
@@ -84,5 +69,7 @@
     </script>
 -->
 </body>
-
+<footer>
+    Team SmoothDevOperators - Jean-Baptist, Michiel , Mauro
+</footer>
 </html>

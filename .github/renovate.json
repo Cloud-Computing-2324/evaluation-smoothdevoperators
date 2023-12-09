@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "extends": ["config:base"],
   "semanticCommits": true,
   "packageRules": [
@@ -21,3 +22,13 @@
      }
   }
  }
+=======
+    "extends": ["config:base"],
+    "packageRules": [
+      {
+        "updateTypes": ["minor", "patch"],
+        "semanticCommits": true
+      }
+    ]
+  }  
+>>>>>>> 2d2e869ced063b55c882d380c31d75ee2c6082a3
