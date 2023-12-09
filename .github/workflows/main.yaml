@@ -7,7 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Self-hosted Renovate
+      uses: renovatebot/github-action@v39.1.4
     - name: build
       env:
         DOCKER_HUB_LOGIN: ${{ secrets.DOCKER_HUB_LOGIN }}
@@ -20,5 +23,3 @@ jobs:
         echo 'Pushing image...'
         docker push delsynn/sdo:latest
         echo 'Done !'
-    - name: Self-hosted Renovate
-        uses: renovatebot/github-action@v39.1.4
