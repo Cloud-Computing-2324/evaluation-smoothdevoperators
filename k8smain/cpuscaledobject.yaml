@@ -5,7 +5,7 @@ metadata:
   namespace: sdomain
 spec:
   scaleTargetRef:
-    name: sdomain
+    deploymentName: sdomain
   pollingInterval: 5 # Adjust the polling interval according to your needs
   cooldownPeriod: 30 # Set the cooldown period before scaling down (in seconds)
   minReplicaCount: 1
