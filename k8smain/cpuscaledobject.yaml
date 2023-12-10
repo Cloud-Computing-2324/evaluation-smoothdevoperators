@@ -1,0 +1,17 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: cpu-scaledobject
+  namespace: sdomain
+spec:
+  scaleTargetRef:
+    name: sdomain
+  pollingInterval: 5 # Adjust the polling interval according to your needs
+  cooldownPeriod: 30 # Set the cooldown period before scaling down (in seconds)
+  minReplicaCount: 1
+  maxReplicaCount: 10
+  advanced:
+    horizontalPodAutoscalerConfig:
+      behavior: "cpu"
+      cpu: 
+        utilization: 50 # Set the target CPU utilization percentage for scaling
