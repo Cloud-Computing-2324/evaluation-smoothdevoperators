@@ -12,4 +12,4 @@ spec:
       timezone: Europe/Brussels
       start: 0 6 * * *
       end: 0 24 * * *
-      desiredReplicas: "3"
+      desiredReplicas: "4"
