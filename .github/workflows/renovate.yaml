@@ -20,6 +20,6 @@ jobs:
       run: npm install -g renovate
 
     - name: Run Renovate
-      run: renovate --autodicover
+      run: renovate --autodiscover
       env:
         RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
