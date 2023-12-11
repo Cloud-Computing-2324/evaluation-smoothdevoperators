@@ -1,23 +1,7 @@
 {
   "extends": ["config:base"],
-  "semanticCommits": true,
-  "packageRules": [
-     {
-       "updateTypes": ["minor", "patch"],
-       "matchDatasources": ["docker"],
-       "versioning": "semver",
-       "semanticCommits": true
-     }
-  ],
-  "monorepo": {
-     "mainFile": "./website/Dockerfile",
-     "packages": {
-       "packages/*": {
-         "mainFile": "./package.json"
-       },
-       "website": {
-         "mainFile": "./Dockerfile"
-       }
-     }
-  }
- }
+  "dockerfile": {
+    "enabled": true
+  },
+  "schedule": ["at 5:00am"]
+}
