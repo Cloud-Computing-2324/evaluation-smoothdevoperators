@@ -1,9 +1,23 @@
 {
-    "extends": ["config:base"],
-    "packageRules": [
-      {
-        "updateTypes": ["minor", "patch"],
-        "semanticCommits": true
-      }
-    ]
-  }  
+  "extends": ["config:base"],
+  "semanticCommits": true,
+  "packageRules": [
+     {
+       "updateTypes": ["minor", "patch"],
+       "matchDatasources": ["docker"],
+       "versioning": "semver",
+       "semanticCommits": true
+     }
+  ],
+  "monorepo": {
+     "mainFile": "./website/Dockerfile",
+     "packages": {
+       "packages/*": {
+         "mainFile": "./package.json"
+       },
+       "website": {
+         "mainFile": "./Dockerfile"
+       }
+     }
+  }
+ }
