@@ -1,5 +1,5 @@
 # Use the official Nginx image as the base image
-FROM nginx:latest
+FROM nginx:1.24.0
 
 # Permissions
 RUN chown -R nginx:nginx /usr/share/nginx/html
