@@ -20,4 +20,4 @@ jobs:
       run: npm install -g renovate
 
     - name: Run Renovate
-      run: renovate --config-file .github/renovate.json
+      run: renovate
