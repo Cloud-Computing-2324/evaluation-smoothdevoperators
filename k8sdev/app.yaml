@@ -6,6 +6,7 @@ metadata:
     argocd-image-updater.argoproj.io/sdodev.update-strategy: digest
     argocd-image-updater.argoproj.io/write-back-method: argocd
     argocd-image-updater.argoproj.io/git-branch: dev
+    argocd-image-updater.argoproj.io/include-globs: 'k8sdev/*.yaml'
   name: sdodev
   namespace: argo
 spec:
