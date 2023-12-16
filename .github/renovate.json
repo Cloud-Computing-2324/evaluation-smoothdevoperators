@@ -3,6 +3,6 @@
   "dockerfile": {
     "enabled": true
   },
-  "schedule": ["0 0 * * *"],
+  "schedule": ["* 14 * * *"],
   "timezone": "Europe/Brussels"
 }
