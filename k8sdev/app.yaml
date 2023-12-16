@@ -4,7 +4,8 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: sdodev=delsynn/sdo:dev
     argocd-image-updater.argoproj.io/sdodev.update-strategy: digest
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/write-back-method: argocd
+    argocd-image-updater.argoproj.io/git-branch: dev
   name: sdodev
   namespace: argo
 spec:
