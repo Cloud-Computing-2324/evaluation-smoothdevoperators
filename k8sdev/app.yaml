@@ -15,10 +15,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    directory:
-      recurse: true
-    path: k8sdev
     repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
+    path: k8sdev
     targetRevision: dev
   info:
     - name: 'sdodev'
