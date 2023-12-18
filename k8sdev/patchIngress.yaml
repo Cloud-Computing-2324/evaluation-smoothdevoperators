@@ -4,7 +4,7 @@ metadata:
   name: sdodev
 spec:
   rules:
-  - host: REPLACE-HOST
+  - host: sdodev.38.cc.ucll.cloud
     http:
       paths:
       - path: /
@@ -13,4 +13,4 @@ spec:
           service:
             name: sdodev
             port:
-              number: 80
+              number: 80 

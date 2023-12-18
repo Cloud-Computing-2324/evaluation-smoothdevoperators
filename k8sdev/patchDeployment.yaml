@@ -6,15 +6,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: REPLACE-APP
+      app: sdodev
   template:
     metadata:
       labels:
-        app: REPLACE-APP
+        app: sdodev
     spec:
       containers:
       - name: sdodev
-        image:  REPLACE-IMAGE
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
+        image: delsynn/sdo:dev
