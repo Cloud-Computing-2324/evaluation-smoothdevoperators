@@ -1,0 +1,22 @@
+name: CI Kustomize
+on:
+  push:
+    branches:
+    - Kustomize
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: build
+      env:
+        DOCKER_HUB_LOGIN: ${{ secrets.DOCKER_HUB_LOGIN }}
+        DOCKER_HUB_SECRET: ${{ secrets.DOCKER_HUB_SECRET }}
+      run: |
+        echo 'Docker login'
+        docker login -u $DOCKER_HUB_LOGIN -p $DOCKER_HUB_SECRET
+        echo 'Running build...'
+        docker build --no-cache ./website -t delsynn/sdo:kustomize
+        echo 'Pushing image...'
+        docker push delsynn/sdo:kustomize
+        echo 'Done !'
