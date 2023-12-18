@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdodev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sdodev
+  template:
+    metadata:
+      labels:
+        app: sdodev
+    spec:
+      containers:
+      - name: sdodev
+        image: delsynn/sdo:dev
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: sdodev=docker.io/delsynn/sdo:dev
+    argocd-image-updater.argoproj.io/git-branch: dev
+    argocd-image-updater.argoproj.io/include-globs: 'k8sdev/*.yaml'
+  name: sdodev
+spec:
+  destination:
+    namespace: sdodev
+  project: default
+  source:
+    path: k8sdev
+    targetRevision: dev
+  info:
+    - name: 'sdodev'
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sdodev
+spec:
+  rules:
+  - host: sdodev.38.cc.ucll.cloud
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: sdodev
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sdodev
+spec:
+  selector:
+    app: sdodev
