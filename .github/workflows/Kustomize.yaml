@@ -2,7 +2,7 @@ name: CI Kustomize
 on:
   push:
     branches:
-    - Kustomize
+    - dev
 jobs:
   build:
     runs-on: ubuntu-latest
