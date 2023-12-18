@@ -1,0 +1,67 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../../base
+- /cronscaledobject.yaml
+
+patches:
+- target:
+    kind: Deployment
+    name: sdomain
+  patch: |-
+    spec:
+      template:
+        metadata:
+          labels:
+            app: sdomain
+        spec:
+          containers:
+          - name: sdomain
+            image: delsynn/sdo:latest
+            imagePullPolicy: Always
+            ports:
+            - containerPort: 80
+
+- target:
+    kind: Application
+    name: sdomain
+  patch: |-
+    spec:
+      destination:
+        namespace: sdomain
+      source:
+        path: k8smain
+        targetRevision: HEAD
+      info:
+      - name: 'sdomain'
+        value: 'https://sdomain.38.cc.ucll.cloud'
+
+- target:
+    kind: Ingress
+    name: sdomain
+  patch: |-
+    spec:
+      rules:
+      - host: sdomain.38.cc.ucll.cloud
+        http:
+          paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: sdomain
+                port:
+                  number: 80
+
+- target:
+    kind: Service
+    name: sdomain
+  patch: |-
+    spec:
+      selector:
+        app: sdomain
+      ports:
+      - protocol: TCP
+        port: 80
+        targetPort: 80
