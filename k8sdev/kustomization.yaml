@@ -5,4 +5,4 @@ resources:
 - ../base
 
 patches:
-  - patches.yaml
+  - path: patches.yaml
