@@ -16,7 +16,7 @@ jobs:
         echo 'Docker login'
         docker login -u $DOCKER_HUB_LOGIN -p $DOCKER_HUB_SECRET
         echo 'Running build...'
-        docker build --no-cache ./website -t delsynn/sdo:kustomize
+        docker build --no-cache ./website -t delsynn/sdo:dev
         echo 'Pushing image...'
-        docker push delsynn/sdo:kustomize
+        docker push delsynn/sdo:dev
         echo 'Done !'
