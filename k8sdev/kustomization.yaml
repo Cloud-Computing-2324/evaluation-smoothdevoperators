@@ -4,5 +4,7 @@ kind: Kustomization
 resources:
 - ../base
 
-patches:
-  - path: patches.yaml
+patchesStrategicMerge:
+  - ./patchDeployment.yaml
+  - ./patchIngress.yaml
+  - ./patchService.yaml
