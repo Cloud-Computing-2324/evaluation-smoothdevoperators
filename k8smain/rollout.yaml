@@ -1,16 +1,12 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  labels:
-    argocd.argoproj.io/instance: sdomain
   name: rollouts
-  namespace: sdomain
 spec:
   selector:
     matchLabels:
       app: sdomain
   replicas: 3
-<<<<<<< HEAD
   selector:
     matchLabels:
       app: sdomain
@@ -30,8 +26,6 @@ spec:
           requests:
             memory: 32Mi
             cpu: 5m
-=======
->>>>>>> e06305f3614e1708dc19aba1eeb02190c4ed3b00
   strategy:
     canary:
       steps:
@@ -44,21 +38,3 @@ spec:
       - setWeight: 80
       - pause: {}
       - setWeight: 100
-  template:
-    metadata:
-      labels:
-        app: sdomain
-    spec:
-      containers:
-        - image: delsynn/sdo:main
-          name: sdomain
-          ports:
-          - containerPort: 8080
-            name: http
-            protocol: TCP
-          resources:
-            requests:
-              cpu: 5m
-              memory: 32Mi
-
-
