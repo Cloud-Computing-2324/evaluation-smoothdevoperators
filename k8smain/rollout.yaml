@@ -1,7 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
+  labels:
+    argocd.argoproj.io/instance: sdomain
   name: rollouts
+  namespace: sdomain
 spec:
   replicas: 3
   template:
@@ -10,7 +13,7 @@ spec:
         app: sdomain
     spec:
       containers:
-      - name: rollouts
+      - name: sdomain
         image: delsynn/sdo:main
         ports:
         - name: http
