@@ -10,6 +10,28 @@ spec:
     matchLabels:
       app: sdomain
   replicas: 3
+<<<<<<< HEAD
+  selector:
+    matchLabels:
+      app: sdomain
+  template:
+    metadata:
+      labels:
+        app: sdomain
+    spec:
+      containers:
+      - name: rollouts
+        image: delsynn/sdo:main
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+        resources:
+          requests:
+            memory: 32Mi
+            cpu: 5m
+=======
+>>>>>>> e06305f3614e1708dc19aba1eeb02190c4ed3b00
   strategy:
     canary:
       steps:
