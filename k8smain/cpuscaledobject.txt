@@ -5,9 +5,15 @@ metadata:
   namespace: sdomain
 spec:
   scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
     name: sdomain
-  triggers:
-  - type: cpu
-    metricType: Utilization # Allowed types are 'Utilization' or 'AverageValue'
-    metadata:
-      value: "50"
+  minReplicas: 1
+  maxReplicas: 3
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
