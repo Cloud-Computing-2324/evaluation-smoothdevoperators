@@ -7,31 +7,33 @@ metadata:
   namespace: sdomain
 spec:
   replicas: 3
+  strategy:
+  canary:
+    steps:
+    - setWeight: 20
+    - pause: {}
+    - setWeight: 40
+    - pause: {}
+    - setWeight: 60
+    - pause: {}
+    - setWeight: 80
+    - pause: {}
+    - setWeight: 100
   template:
     metadata:
       labels:
         app: sdomain
     spec:
       containers:
-      - name: sdomain
-        image: delsynn/sdo:main
-        ports:
-        - name: http
-          containerPort: 8080
-          protocol: TCP
-        resources:
-          requests:
-            memory: 32Mi
-            cpu: 5m
-  strategy:
-    canary:
-      steps:
-      - setWeight: 20
-      - pause: {}
-      - setWeight: 40
-      - pause: {}
-      - setWeight: 60
-      - pause: {}
-      - setWeight: 80
-      - pause: {}
-      - setWeight: 100
+        - image: delsynn/sdo:main
+          name: sdomain
+          ports:
+          - containerPort: 8080
+            name: http
+            protocol: TCP
+          resources:
+            requests:
+              cpu: 5m
+              memory: 32Mi
+
+
