@@ -18,3 +18,10 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m" # This means 0.1 CPU unit
+            memory: "64Mi" # This means 64 Mebibytes of memory
+          limits:
+            cpu: "500m" # This means 0.5 CPU unit
+            memory: "128Mi" # This means 128 Mebibytes of memory
