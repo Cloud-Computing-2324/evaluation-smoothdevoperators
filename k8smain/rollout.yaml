@@ -6,6 +6,9 @@ metadata:
   name: rollouts
   namespace: sdomain
 spec:
+  selector:
+    matchLabels:
+      app: sdomain
   replicas: 3
   strategy:
     canary:
