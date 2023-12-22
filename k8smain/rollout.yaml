@@ -4,6 +4,9 @@ metadata:
   name: rollouts
 spec:
   replicas: 3
+  selector:
+    matchLabels:
+      app: sdomain
   template:
     metadata:
       labels:
