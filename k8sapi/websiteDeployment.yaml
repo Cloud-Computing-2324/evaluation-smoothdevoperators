@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gatewayapi
+  name: website
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gatewayapi
+      app: website
   template:
     metadata:
       labels:
-        app: gatewayapi
+        app: website
     spec:
       containers:
-      - name: gatewayapi
+      - name: website
         image: delsynn/website:1.7
         imagePullPolicy: Always
         ports:
