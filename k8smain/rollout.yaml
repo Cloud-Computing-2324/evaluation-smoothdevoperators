@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: rollouts
-        image: delsynn/sdo:main
+        image: delsynn/sdo:latest
         ports:
         - name: http
           containerPort: 8080
