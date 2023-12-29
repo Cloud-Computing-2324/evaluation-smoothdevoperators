@@ -31,15 +31,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Download mdBook Artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: mdbook-artifact
-
-    - name: Extract mdBook Artifact
-      run: unzip -q ${{ github.workspace }}/mdbook-artifact.zip -d ${{ github.workspace }}/extracted-artifact
-
-
-    - name: Copy Files to Website Folder
-      run: |
-        cp -r ${{ github.workspace }}/extracted-artifact/* website/
+      - name: Copy Workspace to Website Folder
+        run: |
+          cp -r ${{ github.workspace }}/* website/
