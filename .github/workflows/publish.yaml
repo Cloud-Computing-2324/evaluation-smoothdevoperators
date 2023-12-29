@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: mdbook-artifact
-          path: website
+          path: book
       - name: Download mdBook artifact
         uses: actions/download-artifact@v4
         with:
