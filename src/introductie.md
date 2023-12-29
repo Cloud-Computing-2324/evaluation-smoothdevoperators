@@ -1,4 +1,4 @@
-![Smooth](smooth.jpeg)
+![Smooth](smooth.png)
 
 # Documentation on our final cloud computing assignment !
 
