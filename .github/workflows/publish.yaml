@@ -1,21 +1,39 @@
-name: Build and copy mdbook
+name: Build and Deploy Website
+
 on:
   push:
     branches:
-      - qa
+      - qa  # Adjust the branch name as needed
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Repository
+      uses: actions/checkout@v2
 
     - name: Setup mdBook
       uses: peaceiris/actions-mdbook@v1
       with:
-        mdbook-version: '0.4.5'
+        mdbook-version: 'latest' #0.4.5
 
-    - name: Build mdBook
-      run: mdbook build
+    - name: Archive mdBook
+      uses: actions/upload-artifact@v2
+      with:
+        name: mdbook-artifact
+        path: book
 
-    - name: Copy book to website directory
-      run: cp -r ./book ./website
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download mdBook Artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: mdbook-artifact
+
+    - name: Copy Files to Website Folder
+      run: |
+        cp -r book/* website/
