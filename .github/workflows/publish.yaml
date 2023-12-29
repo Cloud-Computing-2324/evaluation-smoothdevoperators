@@ -19,11 +19,3 @@ jobs:
 
     - name: Copy book to website directory
       run: cp -r ./book ./website
-
-    - name: Commit and push if it changed
-      run: |
-        git diff
-        git config --global user.email "action@github.com"
-        git config --global user.name "GitHub Action"
-        git commit -am "Update book" || exit 0
-        git push
