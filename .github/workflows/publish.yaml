@@ -10,10 +10,8 @@ permissions:
   contents: write
 
 jobs:
-  build:
-    runs-on: ubuntu-20.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
+  deploy:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
