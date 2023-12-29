@@ -6,7 +6,7 @@ on:
       - qa
 
 jobs:
-  build:
+  build-upload-download:
     runs-on: ubuntu-latest
     
     steps:
@@ -35,3 +35,5 @@ jobs:
         with:
           name: mdbook-artifact
           path: website
+          repository: ${{ github.repository }}
+          run-id: ${{ github.run_id }}
