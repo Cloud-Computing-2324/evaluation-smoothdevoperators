@@ -18,7 +18,7 @@ jobs:
       run: mdbook build
 
     - name: Copy book to website directory
-      run: cp -r book/* ./website
+      run: cp -r ./book ./website
 
     - name: Commit and push if it changed
       run: |
