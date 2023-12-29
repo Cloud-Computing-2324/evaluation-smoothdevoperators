@@ -1,8 +1,9 @@
 name: CI QA
 on:
-  push:
-    branches:
-    - qa
+  workflow_run:
+    workflows: ["Build and copy mdbook"]
+    types:
+      - completed
 jobs:
   build:
     runs-on: ubuntu-latest
