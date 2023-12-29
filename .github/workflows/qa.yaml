@@ -1,7 +1,7 @@
 name: CI QA
 on:
   workflow_run:
-    workflows: ["Build and copy mdbook"]
+    workflows: ["Build and Deploy Website"]
     types:
       - completed
 jobs:
