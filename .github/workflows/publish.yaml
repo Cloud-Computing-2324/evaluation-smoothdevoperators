@@ -25,12 +25,6 @@ jobs:
         with:
           name: mdbook-artifact
           path: book
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Copy Workspace to Website Folder
         run: |
           cp -r ${{ github.workspace }}/* website/
