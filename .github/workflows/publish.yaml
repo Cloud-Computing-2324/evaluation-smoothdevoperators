@@ -1,16 +1,10 @@
 name: Build and Deploy Website
-
 on:
   push:
     branches:
       - qa
-  pull_request:
-
-permissions:
-  contents: write
-
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
