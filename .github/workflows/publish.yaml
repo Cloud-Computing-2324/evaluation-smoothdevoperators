@@ -28,7 +28,7 @@ jobs:
           path: book
 
       - name: Download mdBook Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v2
         with:
           path: website
           repository: ${{ github.repository }}
