@@ -1,9 +1,7 @@
 name: CI QA
 on:
-  workflow_run:
-    workflows: ["Build and Deploy Website"]
-    types:
-      - completed
+  repository_dispatch:
+    types: [trigger-workflow]
 jobs:
   build:
     runs-on: ubuntu-latest
