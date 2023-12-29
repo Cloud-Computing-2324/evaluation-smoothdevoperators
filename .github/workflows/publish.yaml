@@ -21,14 +21,11 @@ jobs:
 
       - run: mdbook build
 
-      - name: Archive mdBook
+      - name: Upload mdBook Artifact
         uses: actions/upload-artifact@v2
         with:
           name: mdbook-artifact
           path: book
-
-      - name: Checkout code
-        uses: actions/checkout@v2
 
       - name: Download mdBook Artifact
         uses: actions/download-artifact@v4
