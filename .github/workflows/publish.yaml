@@ -1,0 +1,30 @@
+name: Build and copy mdbook
+on:
+  push:
+    branches:
+      - qa
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup mdBook
+      uses: peaceiris/actions-mdbook@v1
+      with:
+        mdbook-version: '0.4.5'
+
+    - name: Build mdBook
+      run: mdbook build
+
+    - name: Copy book to website directory
+      run: cp -r book/* ./website
+
+    - name: Commit and push if it changed
+      run: |
+        git diff
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action"
+        git commit -am "Update book" || exit 0
+        git push
