@@ -1,11 +1,14 @@
 name: Build and Deploy Website
+
 on:
   push:
     branches:
       - qa
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v2
 
@@ -15,24 +18,24 @@ jobs:
           mdbook-version: 'latest'
           # mdbook-version: '0.4.10'
 
-    - run: mdbook build
+      - run: mdbook build
 
-    - name: Archive mdBook
-      uses: actions/upload-artifact@v2
-      with:
-        name: mdbook-artifact
-        path: book
+      - name: Archive mdBook
+        uses: actions/upload-artifact@v2
+        with:
+          name: mdbook-artifact
+          path: book
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
 
     steps:
-    - name: Download mdBook Artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: mdbook-artifact
+      - name: Download mdBook Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: mdbook-artifact
 
-    - name: Copy Files to Website Folder
-      run: |
-        cp -r book/* website/
+      - name: Copy Files to Website Folder
+        run: |
+          cp -r book/* website/
