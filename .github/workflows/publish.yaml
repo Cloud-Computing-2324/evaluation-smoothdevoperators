@@ -3,20 +3,27 @@ name: Build and Deploy Website
 on:
   push:
     branches:
-      - qa  # Adjust the branch name as needed
+      - qa
+  pull_request:
+
+permissions:
+  contents: write
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Setup mdBook
-      uses: peaceiris/actions-mdbook@v1
-      with:
-        mdbook-version: 'latest' #0.4.5
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: 'latest'
+          # mdbook-version: '0.4.10'
+
+    - run: mdbook build
 
     - name: Archive mdBook
       uses: actions/upload-artifact@v2
