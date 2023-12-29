@@ -25,8 +25,10 @@ jobs:
         with:
           name: mdbook-artifact
           path: book
-      - name: Download mdBook artifact
+      - name: Download mdBook Artifact
         uses: actions/download-artifact@v4
         with:
           name: mdbook-artifact
           path: website
+          merge-multiple: false
+          repository: Cloud-Computing-2324/evaluation-smoothdevoperators
