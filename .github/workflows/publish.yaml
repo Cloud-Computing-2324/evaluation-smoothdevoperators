@@ -27,4 +27,4 @@ jobs:
           path: book
       - name: Copy Workspace to Website Folder
         run: |
-          cp -r ${{ github.workspace }}/* website/
+          cp -r ${{ github.workspace }}/book website/
