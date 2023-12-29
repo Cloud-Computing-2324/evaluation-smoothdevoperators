@@ -6,7 +6,7 @@ on:
       - qa
 
 jobs:
-  build-upload-download:
+  build:
     runs-on: ubuntu-latest
     
     steps:
@@ -21,29 +21,18 @@ jobs:
 
       - run: mdbook build
 
-      - name: Upload mdBook Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: mdbook-artifact
-          path: book
-
-      - name: Download mdBook Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: mdbook-artifact
-          path: website
-      
-      - name: Commit and push artifact
+      - name: Docker login
+        env:
+          DOCKER_HUB_LOGIN: ${{ secrets.DOCKER_HUB_LOGIN }}
+          DOCKER_HUB_SECRET: ${{ secrets.DOCKER_HUB_SECRET }}
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add website/*
-          git commit -m "Add downloaded artifact"
-          git push
-      
-      - name: Trigger another workflow
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          token: ${{ secrets.PAT }}
-          repository: ${{ github.repository }}
-          event-type: trigger-workflow
+          echo 'Docker login'
+          docker login -u $DOCKER_HUB_LOGIN -p $DOCKER_HUB_SECRET
+
+      - name: Build and push Docker image
+        run: |
+          echo 'Running build...'
+          docker build --no-cache ./book -t delsynn/sdo:qa
+          echo 'Pushing image...'
+          docker push delsynn/sdo:qa
+          echo 'Done !'
