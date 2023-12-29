@@ -40,3 +40,10 @@ jobs:
           git add website/*
           git commit -m "Add downloaded artifact"
           git push
+      
+      - name: Trigger another workflow
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PAT }}
+          repository: ${{ github.repository }}
+          event-type: trigger-workflow
