@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2    
 
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
@@ -25,8 +26,11 @@ jobs:
         with:
           name: mdbook-artifact
           path: book
-      - name: Download mdBook Artifact
+
+      - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Download mdBook Artifact
         uses: actions/download-artifact@v4
         with:
           name: mdbook-artifact
