@@ -37,10 +37,8 @@ jobs:
         name: mdbook-artifact
 
     - name: Extract mdBook Artifact
-      uses: actions/extract@v2
-      with:
-        archive-file: ${{ github.workspace }}/mdbook-artifact/mdbook-artifact.zip
-        output-directory: ${{ github.workspace }}/extracted-artifact
+      run: unzip -q ${{ github.workspace }}/mdbook-artifact/mdbook-artifact.zip -d ${{ github.workspace }}/extracted-artifact
+
 
     - name: Copy Files to Website Folder
       run: |
