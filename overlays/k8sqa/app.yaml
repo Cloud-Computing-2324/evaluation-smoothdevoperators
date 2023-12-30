@@ -3,7 +3,7 @@ kind: Application
 metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: sdoqa=delsynn/sdo:qa
-    argocd-image-updater.argoproj.io/sdoqa.update-strategy: latest
+    argocd-image-updater.argoproj.io/sdoqa.update-strategy: digest
     argocd-image-updater.argoproj.io/git-branch: qa
   name: sdoqa
   namespace: argo

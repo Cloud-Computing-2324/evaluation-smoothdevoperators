@@ -3,7 +3,7 @@ kind: Application
 metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: sdodev=delsynn/sdo:dev
-    argocd-image-updater.argoproj.io/sdodev.update-strategy: latest
+    argocd-image-updater.argoproj.io/sdodev.update-strategy: digest
     argocd-image-updater.argoproj.io/git-branch: dev
   name: sdodev
   namespace: argo
@@ -15,7 +15,7 @@ spec:
   source:
     repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
     path: k8sdev
-    targetRevision: sdodev
+    targetRevision: dev
   info:
     - name: 'sdodev'
       value: 'https://sdodev.38.cc.ucll.cloud'
