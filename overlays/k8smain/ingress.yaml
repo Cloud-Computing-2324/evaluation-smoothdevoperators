@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sdomain
+spec:
+  rules:
+  - host: sdomain.38.cc.ucll.cloud
+    http:
+      paths:
+      - backend:
+          service:
+            name: sdomain
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
