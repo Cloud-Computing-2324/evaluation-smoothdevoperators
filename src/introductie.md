@@ -1,5 +1,15 @@
 ![Smooth](smooth.png)
 
-# Documentation on our final cloud computing assignment !
+# Evaluation Assignment
 
-De documentatie van onze Cloud Computing opdracht !
+Wij kozen voor de volgende topics:
+
+### Major
+
+CI/CI & Advanced GitOps
+
+### Minor
+
+Gateway API Spec
+
+Autoscaling with Keda
