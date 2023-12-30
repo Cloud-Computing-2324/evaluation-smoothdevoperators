@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdomain
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sdomain
+  template:
+    metadata:
+      labels:
+        app: sdomain
+    spec:
+      containers:
+      - image: delsynn/sdo:latest
+        imagePullPolicy: Always
+        name: sdowebsite
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 500m
+            memory: 256Mi

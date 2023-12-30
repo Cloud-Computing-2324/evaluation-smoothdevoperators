@@ -1,13 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: rolloutservice
-  namespace: sdomain
+  name: sdomain
 spec:
   ports:
   - port: 80
-    targetPort: http
     protocol: TCP
-    name: http
+    targetPort: 80
   selector:
     app: sdomain

@@ -1,7 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: rollouts
+  name: sdomainrollout
+  namespace: sdomain
 spec:
   selector:
     matchLabels:
@@ -13,7 +14,7 @@ spec:
         app: sdomain
     spec:
       containers:
-      - name: rollouts
+      - name: rollout
         image: delsynn/sdo:latest
         ports:
         - name: http
