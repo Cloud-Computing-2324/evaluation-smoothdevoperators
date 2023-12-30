@@ -4,11 +4,11 @@
 
 Wij kozen voor de volgende topics:
 
-## Major
+### Major
 
 CI/CI & Advanced GitOps
 
-## Minor
+### Minor
 
 Gateway API Spec
 
