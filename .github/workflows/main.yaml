@@ -1,23 +1,38 @@
-name: CI MAIN
+name: Build and Deploy Website
+
 on:
   push:
     branches:
-    - main
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: build
-      env:
-        DOCKER_HUB_LOGIN: ${{ secrets.DOCKER_HUB_LOGIN }}
-        DOCKER_HUB_SECRET: ${{ secrets.DOCKER_HUB_SECRET }}
-      run: |
-        echo 'Docker login'
-        docker login -u $DOCKER_HUB_LOGIN -p $DOCKER_HUB_SECRET
-        echo 'Running build...'
-        docker build --no-cache ./website -t delsynn/sdo:latest
-        echo 'Pushing image...'
-        docker push delsynn/sdo:latest
-        echo 'Done !'
+      - name: Checkout code
+        uses: actions/checkout@v4  
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: 'latest'
+          # mdbook-version: '0.4.10'
+
+      - run: mdbook build
+
+      - name: Docker login
+        env:
+          DOCKER_HUB_LOGIN: ${{ secrets.DOCKER_HUB_LOGIN }}
+          DOCKER_HUB_SECRET: ${{ secrets.DOCKER_HUB_SECRET }}
+        run: |
+          echo 'Docker login'
+          docker login -u $DOCKER_HUB_LOGIN -p $DOCKER_HUB_SECRET
+
+      - name: Build and push Docker image
+        run: |
+          echo 'Running build...'
+          docker build --no-cache ./book -t delsynn/sdo:latest
+          echo 'Pushing image...'
+          docker push delsynn/sdo:latest
+          echo 'Done !'
