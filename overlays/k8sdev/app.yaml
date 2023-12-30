@@ -15,7 +15,7 @@ spec:
   source:
     repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
     path: k8sdev
-    targetRevision: dev
+    targetRevision: sdodev
   info:
     - name: 'sdodev'
       value: 'https://sdodev.38.cc.ucll.cloud'
