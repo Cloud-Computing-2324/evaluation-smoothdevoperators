@@ -4,7 +4,7 @@ kind: Kustomization
 nameSuffix: qa
 
 bases:
-- ../base
+- ../../base
 
 patchesStrategicMerge:
   - patchDeployment.yaml
