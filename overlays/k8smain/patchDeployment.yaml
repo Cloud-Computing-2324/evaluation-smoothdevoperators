@@ -48,3 +48,60 @@ metadata:
 spec:
   selector:
     app: sdomain
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: sdomainrollout
+  namespace: sdomain
+spec:
+  selector:
+    matchLabels:
+      app: sdomain
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: sdomain
+    spec:
+      containers:
+      - name: rollout
+        image: delsynn/sdo:latest
+        ports:
+        - name: http
+          containerPort: 8080
+          protocol: TCP
+        resources:
+          requests:
+            memory: 32Mi
+            cpu: 5m
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause: {}
+      - setWeight: 40
+      - pause: {}
+      - setWeight: 60
+      - pause: {}
+      - setWeight: 80
+      - pause: {}
+      - setWeight: 100
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: rolloutservice
+  namespace: sdomain
+spec:
+  ports:
+  - port: 80
+    targetPort: http
+    protocol: TCP
+    name: http
+  selector:
+    app: sdomain
