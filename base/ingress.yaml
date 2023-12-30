@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: sdodev
+  name: sdo
 spec:
   rules:
   - host: REPLACE-HOST
@@ -11,6 +11,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: sdodev
+            name: sdo
             port:
               number: 80

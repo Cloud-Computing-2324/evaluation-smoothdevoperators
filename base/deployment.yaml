@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sdodev
+  name: sdo
 spec:
   replicas: 1
   selector:
@@ -13,8 +13,8 @@ spec:
         app: REPLACE-APP
     spec:
       containers:
-      - name: sdodev
-        image:  REPLACE-IMAGE
+      - name: sdowebsite
+        image: REPLACE-IMAGE
         imagePullPolicy: Always
         ports:
         - containerPort: 80
