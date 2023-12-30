@@ -1,8 +1,0 @@
-apiVersion: gateway.networking.k8s.io/v1alpha2
-kind: GatewayClass
-metadata:
-  name: tcp-gateway-class
-spec:
-  # Controller is a domain/path string that indicates
-  # the controller that is managing Gateways of this class.
-  controllerName: traefik.io/gateway-controller
