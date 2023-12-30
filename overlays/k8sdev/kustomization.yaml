@@ -3,8 +3,8 @@ kind: Kustomization
 
 nameSuffix: dev
 
-bases:
+resources:
 - ../../base
 
-patchesStrategicMerge:
+patches:
   - patchDeployment.yaml
