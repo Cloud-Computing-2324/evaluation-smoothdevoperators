@@ -13,5 +13,3 @@ CI/CI & Advanced GitOps
 Gateway API Spec
 
 Autoscaling with Keda
-
-### TESTING ONCE AGAIN FOR THE Nth TIME and then some !
