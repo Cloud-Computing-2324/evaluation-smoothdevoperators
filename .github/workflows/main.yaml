@@ -42,12 +42,14 @@ jobs:
         with:
           version: 'latest'
 
-      - name: Configure kubectl
+      - name: Login to Kubernetes Cluster
         uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
         with:
           args: get pods
+      
+      - name: Delete Resources
         run: |
           kubectl delete deployment sdomain -n sdomain
           kubectl delete service sdomainservice -n sdomain
