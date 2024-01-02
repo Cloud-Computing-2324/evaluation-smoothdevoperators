@@ -51,25 +51,4 @@ jobs:
       
       - name: Delete Resources from Kubernetes Cluster
         run: |
-          kubectl delete deployment sdomain -n sdomain
-          kubectl delete service sdomainservice -n sdomain
-          kubectl delete service sdomainrolloutservice -n sdomain
-          kubectl delete ingress sdomainingress -n sdomain
-          kubectl delete rollout sdomainrollout -n sdomain
-          kubectl delete scaledobject sdomainpodscaler -n sdomain
-
-      - name: Install Argo CD CLI
-        run: |
-          wget https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 -O /usr/local/bin/argocd
-          chmod +x /usr/local/bin/argocd
-
-      - name: Login to Argo CD
-        run: argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure --grpc-web
-
-      - name: Delete Argo CD Application and re-apply it
-        run: |
-          argocd app delete sdomain --cascade=false
-          argocd app create sdomain --file overlays/k8smain/app.yaml
-
-      - name: Logout from Argo CD
-        run: argocd logout
+          kubectl delete -f overlays/k8smain/app.yaml
