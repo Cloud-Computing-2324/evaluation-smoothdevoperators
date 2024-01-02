@@ -36,3 +36,33 @@ jobs:
           echo 'Pushing image...'
           docker push delsynn/sdo:latest
           echo 'Done !'
+        
+        - name: Setup kubectl
+      uses: azure/setup-kubectl@v1
+      with:
+        version: 'latest'
+
+    - name: Configure kubectl
+      run: echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
+
+    - name: Install Argo CD CLI
+      run: |
+        wget https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64 -O /usr/local/bin/argocd
+        chmod +x /usr/local/bin/argocd
+
+    - name: Login to Argo CD
+      run: argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure
+
+    - name: Delete Argo CD Application Resources
+      run: |
+        sudo argocd app delete sdomain
+        sudo kubectl delete deployment sdomain -n sdomain
+        sudo kubectl delete service sdomainservice -n sdomain
+        sudo kubectl delete service sdomainrolloutservice -n sdomain
+        sudo kubectl delete ingress sdomainingress -n sdomain
+        sudo kubectl delete rollout sdomainrollout -n sdomain
+        sudo kubectl delete scaledobject sdomain -n sdomainpodscaler
+        sudo argocd app create sdomain --file overlays/k8smain/app.yaml
+
+    - name: Logout from Argo CD
+      run: argocd logout
