@@ -1,6 +1,6 @@
 # Summary
 
-[Introductie](introductie.md)
+[Introductie](intro.md)
 
 # CI/CD & advanced GitOps
 
