@@ -49,7 +49,7 @@ jobs:
         with:
           args: get pods
       
-      - name: Delete Resources
+      - name: Delete Resources from Kubernetes Cluster
         run: |
           kubectl delete deployment sdomain -n sdomain
           kubectl delete service sdomainservice -n sdomain
