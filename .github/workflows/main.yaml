@@ -43,7 +43,9 @@ jobs:
           version: 'latest'
 
       - name: Configure kubectl
-        run: echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
+        run: |
+          sudo mkdir -p $HOME/.kube
+          echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
 
       - name: Install Argo CD CLI
         run: |
