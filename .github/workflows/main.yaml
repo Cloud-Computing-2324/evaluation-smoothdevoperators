@@ -53,7 +53,7 @@ jobs:
           chmod +x /usr/local/bin/argocd
 
       - name: Login to Argo CD
-        run: argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure
+        run: argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure --grpc-web
 
       - name: Delete Argo CD Application Resources
         run: |
