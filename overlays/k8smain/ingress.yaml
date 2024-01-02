@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: sdomainingress
+  namespace: sdomain
 spec:
   rules:
   - host: sdomain.38.cc.ucll.cloud
