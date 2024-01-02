@@ -43,9 +43,12 @@ jobs:
           version: 'latest'
 
       - name: Configure kubectl
+        uses: actions-hub/kubectl@master
+        env:
+          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+        with:
+          args: get pods
         run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.YOUR_KUBE_CONFIG_SECRET }}" > $HOME/.kube/config
           kubectl delete deployment sdomain -n sdomain
           kubectl delete service sdomainservice -n sdomain
           kubectl delete service sdomainrolloutservice -n sdomain
@@ -61,7 +64,7 @@ jobs:
       - name: Login to Argo CD
         run: argocd login ${{ secrets.ARGOCD_SERVER }} --username ${{ secrets.ARGOCD_USERNAME }} --password ${{ secrets.ARGOCD_PASSWORD }} --insecure --grpc-web
 
-      - name: Delete Argo CD Application Resources Manually
+      - name: Delete Argo CD Application and re-apply it
         run: |
           argocd app delete sdomain --cascade=false
           argocd app create sdomain --file overlays/k8smain/app.yaml
