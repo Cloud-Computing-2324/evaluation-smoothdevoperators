@@ -9,7 +9,7 @@ spec:
       paths:
       - backend:
           service:
-            name: sdomainService
+            name: sdomainservice
             port:
               number: 80
         path: /
