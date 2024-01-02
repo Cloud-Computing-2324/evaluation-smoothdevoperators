@@ -57,7 +57,7 @@ jobs:
 
       - name: Delete Argo CD Application Resources Manually
         run: |
-          argocd app delete sdomain
+          argocd app delete sdomain --no-cascade
           kubectl delete deployment sdomain -n sdomain
           kubectl delete service sdomainservice -n sdomain
           kubectl delete service sdomainrolloutservice -n sdomain
