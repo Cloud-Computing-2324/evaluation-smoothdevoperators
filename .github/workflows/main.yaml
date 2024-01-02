@@ -44,7 +44,7 @@ jobs:
 
       - name: Configure kubectl
         run: |
-          sudo mkdir -p $HOME/.kube
+          mkdir -p $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
 
       - name: Install Argo CD CLI
@@ -57,14 +57,14 @@ jobs:
 
       - name: Delete Argo CD Application Resources
         run: |
-          sudo argocd app delete sdomain
-          sudo kubectl delete deployment sdomain -n sdomain
-          sudo kubectl delete service sdomainservice -n sdomain
-          sudo kubectl delete service sdomainrolloutservice -n sdomain
-          sudo kubectl delete ingress sdomainingress -n sdomain
-          sudo kubectl delete rollout sdomainrollout -n sdomain
-          sudo kubectl delete scaledobject sdomainpodscaler -n sdomain
-          sudo argocd app create sdomain --file overlays/k8smain/app.yaml
+          argocd app delete sdomain
+          kubectl delete deployment sdomain -n sdomain
+          kubectl delete service sdomainservice -n sdomain
+          kubectl delete service sdomainrolloutservice -n sdomain
+          kubectl delete ingress sdomainingress -n sdomain
+          kubectl delete rollout sdomainrollout -n sdomain
+          kubectl delete scaledobject sdomainpodscaler -n sdomain
+          argocd app create sdomain --file overlays/k8smain/app.yaml
 
       - name: Logout from Argo CD
         run: argocd logout
