@@ -35,7 +35,7 @@ jobs:
       - name: setup markdownlint
         run: npm install markdownlint-cli
 
-      - name: run markdownlint test
+      - name: check for markdown linting errors
         run: npx markdownlint **/*.md
         continue-on-error: true
 
