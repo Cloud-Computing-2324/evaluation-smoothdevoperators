@@ -29,7 +29,7 @@ jobs:
         run: npm install markdown-link-check@3.11.2
 
       - name: Check for broken links
-        run: npx markdown-link-check **/*.md || echo "Link check failed. Check the logs for details." 
+        run: npx markdown-link-check **/*.md 
         continue-on-error: true
 
       - run: mdbook build
