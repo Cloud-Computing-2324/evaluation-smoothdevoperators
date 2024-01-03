@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4  
 
-      # node.js installeert npx om de broken link checker te kunnen gebruiken
+      # node.js installeert npx dependency om tests te kunnen gebruiken
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -31,7 +31,10 @@ jobs:
       - name: Check for broken links
         run: npx markdown-link-check **/*.md 
         continue-on-error: true
-      
+
+      - name: setup markdownlint
+        run: npm install markdownlint-cli
+
       - name: run markdownlint test
         run: npx markdownlint **/*.md
 
