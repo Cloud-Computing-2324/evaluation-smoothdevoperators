@@ -47,14 +47,14 @@ jobs:
         run: npx markdown-spellcheck **/*.md
         continue-on-error: true
 
+      - name: Install remark-cli and presets
+        run: npm install -g remark-cli remark-preset-lint-recommended remark-preset-lint-consistent
+
+      - name: Run code block language specification check
+        run: npx remark -i '**/*.md' -o
+
       - run: mdbook build
       - run: mdbook test
-
-      - name: setup html proofer
-        run: gem install html-proofer
-      
-      - name: run html proofer
-        run: npx htmlproofer _book
 
       - name: Docker login
         env:
