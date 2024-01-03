@@ -40,7 +40,11 @@ jobs:
         continue-on-error: true
 
       - name: setup spellcheck
-        run: npm install markdown-spellcheck --files '**/*.md'
+        run: npm install markdown-spellcheck
+      
+      - name: check for spelling errors
+        run: npx markdown-spellcheck --files '**/*.md'
+        continue-on-error: true
 
       - run: mdbook build
       - run: mdbook test
