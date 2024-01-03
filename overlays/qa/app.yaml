@@ -1,6 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: sdoqa=delsynn/sdo:qa
+    argocd-image-updater.argoproj.io/sdoqa.update-strategy: digest
+    argocd-image-updater.argoproj.io/git-branch: qa
   name: sdoqa
   namespace: argo
 spec:
@@ -9,8 +13,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: k8sqa
     repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
+    path: overlays/qa
     targetRevision: qa
   info:
     - name: 'sdoqa'

@@ -1,6 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: sdodev=delsynn/sdo:dev
+    argocd-image-updater.argoproj.io/sdodev.update-strategy: digest
+    argocd-image-updater.argoproj.io/git-branch: dev
   name: sdodev
   namespace: argo
 spec:
@@ -9,8 +13,8 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: k8sdev
     repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
+    path: overlays/dev
     targetRevision: dev
   info:
     - name: 'sdodev'

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sdo
+spec:
+  selector:
+    matchLabels:
+      app: REPLACE-APP
+  template:
+    metadata:
+      labels:
+        app: REPLACE-APP
+    spec:
+      containers:
+      - name: sdowebsite
+        image: REPLACE-IMAGE
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
