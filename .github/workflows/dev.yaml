@@ -13,11 +13,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4  
 
+      # node.js installeert npx om de broken link checker te kunnen gebruiken
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
           mdbook-version: 'latest'
           # mdbook-version: '0.4.10'
+              
+      - name: Check for broken links
+        run: npx markdown-link-check **/*.md
 
       - run: mdbook build
       - run: mdbook test
