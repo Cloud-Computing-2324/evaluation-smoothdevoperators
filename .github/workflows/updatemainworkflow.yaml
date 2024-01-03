@@ -18,8 +18,8 @@ jobs:
       shell: bash
 
     - name: Commit Changes
-        run: |
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git commit -m "Update workflow manifest" -a
-          git push
+      run: |
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "GitHub Actions"
+        git commit -m "Update workflow manifest" -a
+        git push
