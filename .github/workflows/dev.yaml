@@ -20,6 +20,7 @@ jobs:
           # mdbook-version: '0.4.10'
 
       - run: mdbook build
+      - run: mdbook test
 
       - name: Docker login
         env:
