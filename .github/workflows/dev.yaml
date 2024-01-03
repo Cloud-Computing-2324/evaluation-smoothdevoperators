@@ -51,7 +51,7 @@ jobs:
         run: npm install -g remark-cli remark-preset-lint-recommended remark-preset-lint-consistent
 
       - name: Run code block language specification check
-        run: npx remark -i '**/*.md' -o
+        run: npx remark -i '**/*.md' -o ./
 
       - run: mdbook build
       - run: mdbook test
