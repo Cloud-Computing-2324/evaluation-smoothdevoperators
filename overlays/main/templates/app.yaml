@@ -5,6 +5,7 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: sdomain=delsynn/sdo:latest
     argocd-image-updater.argoproj.io/sdomain.update-strategy: latest
     argocd-image-updater.argoproj.io/git-branch: main
+    argocd-image-updater.argoproj.io/write-back-method: git
   name: {{ .Values.appName }}
   namespace: argo
 spec:

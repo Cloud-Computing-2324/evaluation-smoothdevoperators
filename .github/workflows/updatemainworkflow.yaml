@@ -1,0 +1,25 @@
+name: Update Workflow
+
+on:
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
+
+jobs:
+  update-workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Update Workflow Manifest
+      run: bash .git/hooks/image-tag-update
+      shell: bash
+
+    - name: Commit Changes
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git commit -m "Update workflow manifest" -a
+          git push

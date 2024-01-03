@@ -1,9 +1,10 @@
 name: Build Main
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Update Workflow"]  # Name of the first workflow
+    types: 
+      - completed
 
 jobs:
   build:
@@ -32,7 +33,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           echo 'Running build...'
-          docker build --no-cache ./book -t delsynn/sdo:latest
+          docker build --no-cache ./book -t delsynn/sdo:1.0.0
           echo 'Pushing image...'
           docker push delsynn/sdo:latest
           echo 'Done !'
