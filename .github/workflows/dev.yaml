@@ -39,6 +39,9 @@ jobs:
         run: npx markdownlint **/*.md
         continue-on-error: true
 
+      - name: setup spellcheck
+        run: npm install markdown-spellcheck --files '**/*.md'
+
       - run: mdbook build
       - run: mdbook test
 
