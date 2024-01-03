@@ -1,4 +1,4 @@
-# Docker
+# Docker & MdBook
 
 We beginnen bij het aanmaken van een docker image van onze website.
 Tijdens het werken aan de documentatie van andere opdrachten kwam ik op een video over het gebruik van een Github Action genaamd MdBook.
@@ -49,3 +49,13 @@ jobs:
           echo 'Done !'
 
 ```
+
+Zoals u kan zien maakt deze workflow gebruik van enkele Github Actions namelijk:
+
+- De checkout action: deze gaat de repository kopiëren naar de workspace van de workflow en zal aan het einde van de workflow ook alles terug opkuisen.
+- De mdbook action: deze maakt een statische website zoals deze van de markdown files die zich in de "src" folder bevinden in onze repository.
+- En als maken we twee acties zelf aan waar we inloggen op docker, een image aanmaken van de resulterende files van de mdbook action en laden deze op Michiel's Docker Hub.
+
+Nu hebben we een image op docker hub waarmee wij kunnen werken voor het deployen van onze website.
+
+![dockerhub](dockerhub.png)
