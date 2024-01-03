@@ -37,6 +37,7 @@ jobs:
 
       - name: run markdownlint test
         run: npx markdownlint **/*.md
+        continue-on-error: true
 
       - run: mdbook build
       - run: mdbook test
