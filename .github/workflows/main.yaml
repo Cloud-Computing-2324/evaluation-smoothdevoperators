@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4  
+  
+      # node.js installeert npx dependency om tests te kunnen gebruiken
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
