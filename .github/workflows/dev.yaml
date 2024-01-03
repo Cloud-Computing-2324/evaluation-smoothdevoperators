@@ -31,6 +31,9 @@ jobs:
       - name: Check for broken links
         run: npx markdown-link-check **/*.md 
         continue-on-error: true
+      
+      - name: run markdownlint test
+        run: npx markdownlint **/*.md
 
       - run: mdbook build
       - run: mdbook test
