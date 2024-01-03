@@ -1,7 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: sdomain
+  name: {{ .Values.appName }}-ingress
+  namespace: {{ .Values.namespace }}
 spec:
   rules:
   - host: sdomain.38.cc.ucll.cloud
@@ -9,7 +10,7 @@ spec:
       paths:
       - backend:
           service:
-            name: sdomain
+            name: {{ .Values.appName }}-service
             port:
               number: 80
         path: /

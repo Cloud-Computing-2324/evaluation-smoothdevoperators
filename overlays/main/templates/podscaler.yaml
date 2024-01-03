@@ -1,11 +1,11 @@
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
-  name: podscaler
-  namespace: sdomain
+  name: {{ .Values.appName }}-podscaler
+  namespace: {{ .Values.namespace }}
 spec:
   scaleTargetRef:
-    name: sdomain
+    name: {{ .Values.appName }}
   triggers:
   - type: cron
     metadata:

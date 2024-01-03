@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: sdomainrollout
-  namespace: sdomain
+  name: {{ .Values.appName }}-rollout
+  namespace: {{ .Values.namespace }}
 spec:
   selector:
     matchLabels:
-      app: sdomain
+      app: {{ .Values.appName }}
   replicas: 3
   template:
     metadata:
       labels:
-        app: sdomain
+        app: {{ .Values.appName }}
     spec:
       containers:
       - name: rollout

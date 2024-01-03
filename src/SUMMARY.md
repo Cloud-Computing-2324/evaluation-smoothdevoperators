@@ -1,10 +1,11 @@
 # Summary
 
-[Introductie](introductie.md)
+[Introductie](intro.md)
+[CI/CD Intro](cicdintro.md)
 
 # CI/CD & advanced GitOps
 
-[Aanpak](cicdintro.md)
+[Cicdintro](cicdintro.md)
 
 # Autoscaling with Keda
 
