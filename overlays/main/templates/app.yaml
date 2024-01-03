@@ -15,7 +15,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
-    path: overlays/k8smain/sdomain
+    path: overlays/main
     targetRevision: HEAD
   info:
     - name: 'sdomain'
