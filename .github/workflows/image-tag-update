@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Specify the path to your workflow manifest
-WORKFLOW_MANIFEST="../.github/workflows/main.yaml"
+WORKFLOW_MANIFEST="./main.yaml"
 
 # Specify the image and repository details
 IMAGE_REPOSITORY="delsynn/sdo"
