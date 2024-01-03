@@ -36,17 +36,3 @@ jobs:
           echo 'Pushing image...'
           docker push delsynn/sdo:latest
           echo 'Done !'
-
-      - name: Uninstall helm chart
-        uses: actions-hub/kubectl@master
-        env:
-          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
-        with:
-          args: helm uninstall main
-
-      - name: Reinstall helm chart
-        uses: actions-hub/kubectl@master
-        env:
-          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
-        with:
-          args: helm install main . --values.yaml
