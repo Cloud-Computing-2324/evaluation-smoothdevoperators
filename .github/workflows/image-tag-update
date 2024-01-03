@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Specify the path to your workflow manifest
+WORKFLOW_MANIFEST="../.github/workflows/main.yaml"
+
+# Specify the image and repository details
+IMAGE_REPOSITORY="delsynn/sdo"
+LATEST_TAG=$(curl -s "https://registry.hub.docker.com/v2/repositories/$IMAGE_REPOSITORY/tags/" | jq -r '.results|.[]|.name' | sort -V | tail -n1)
+
+# Update the image tag in the workflow manifest
+sed -i "s|image: $IMAGE_REPOSITORY:[^ ]*|image: $IMAGE_REPOSITORY:$LATEST_TAG|" $WORKFLOW_MANIFEST
+
+# Add the updated manifest to the staging area
+git add $WORKFLOW_MANIFEST

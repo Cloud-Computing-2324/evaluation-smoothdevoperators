@@ -35,5 +35,5 @@ jobs:
           echo 'Running build...'
           docker build --no-cache ./book -t delsynn/sdo:1.0.0
           echo 'Pushing image...'
-          docker push delsynn/sdo:latest
+          docker push delsynn/sdo:1.0.0
           echo 'Done !'
