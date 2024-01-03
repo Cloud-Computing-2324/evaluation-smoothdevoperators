@@ -17,8 +17,8 @@ spec:
         image: delsynn/sdo:dev
         resources:
           requests:
-            memory: "256Mi"
-            cpu: "100m"
+            memory: "128Mi"
+            cpu: "50m"
 
 ---
 
