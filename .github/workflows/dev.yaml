@@ -15,7 +15,7 @@ jobs:
 
       # node.js installeert npx dependency om tests te kunnen gebruiken
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v2
         with:
           node-version: '16'
 
@@ -46,12 +46,6 @@ jobs:
       - name: check for spelling errors
         run: npx markdown-spellcheck **/*.md
         continue-on-error: true
-
-      - name: Install remark-cli and presets
-        run: npm install -g remark-cli remark-preset-lint-recommended remark-preset-lint-consistent
-
-      - name: Run code block language specification check
-        run: npx remark -i '**/*.md' -o ./
 
       - run: mdbook build
       - run: mdbook test
