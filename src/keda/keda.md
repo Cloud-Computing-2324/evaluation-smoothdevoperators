@@ -1,0 +1,1 @@
+![Smooth](../smooth.png)
