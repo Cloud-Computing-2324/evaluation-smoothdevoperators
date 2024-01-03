@@ -25,6 +25,9 @@ jobs:
           mdbook-version: 'latest'
           # mdbook-version: '0.4.10'
 
+      - name: setup markdown link check
+        run: npm install markdown-link-check@3.11.2
+
       - name: Check for broken links
         run: npx markdown-link-check **/*.md
 
