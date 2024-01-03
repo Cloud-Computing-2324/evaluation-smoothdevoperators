@@ -43,7 +43,7 @@ jobs:
         run: npm install markdown-spellcheck
       
       - name: check for spelling errors
-        run: npx markdown-spellcheck --files '**/*.md'
+        run: npx markdown-spellcheck **/*.md
         continue-on-error: true
 
       - run: mdbook build
