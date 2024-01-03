@@ -1,11 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sdomain
+  name: {{ .Values.appName }}-service
+  namespace: {{ .Values.namespace }}
 spec:
   ports:
   - port: 80
     protocol: TCP
     targetPort: 80
   selector:
-    app: sdomain
+    app: {{ .Values.appName }}
