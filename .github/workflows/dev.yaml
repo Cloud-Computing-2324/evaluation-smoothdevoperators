@@ -50,6 +50,12 @@ jobs:
       - run: mdbook build
       - run: mdbook test
 
+      - name: setup html proofer
+        run: gem install html-proofer
+      
+      - name: run html proofer
+        run: npx htmlproofer _book
+
       - name: Docker login
         env:
           DOCKER_HUB_LOGIN: ${{ secrets.DOCKER_HUB_LOGIN }}
