@@ -7,7 +7,7 @@
     - [Docker](cicd/docker.md)
     - [Deployment](cicd/deployment.md)
     - [Advanced Gitops](cicd/advanced.md)
-    - [Kustomize and Helm](kustomizeandhelm.md)
+    - [Kustomize and Helm](cicd/kustomizeandhelm.md)
 
 # Autoscaling with Keda
 - [Autoscaling with Keda](keda/keda.md)
