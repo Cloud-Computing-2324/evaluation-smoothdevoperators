@@ -153,4 +153,4 @@ Het enige dat wij dan moeten doen om dit aan te passen voor andere branches is e
 
 De naam "main" voor de applicatie was misschien geen goede keuze maar we waren niet van plan Helm te gebruiken op de andere branches.
 
-Dit omdat de werking met Argo Image Updater voor Helm ons nog moeilijkheden geeft en wij zijn er niet in geslaagd om dit werkende te krijgen. De image wordt geüpdate en er wordt een hash voor gemaakt maar dit wordt dan niet applied op de containers. Helaas hebben wij dit niet op tijd kunnen oplossen.
+Dit omdat de werking met Argo Image Updater voor Helm ons nog moeilijkheden geeft en wij zijn er niet in geslaagd om dit werkende te krijgen. De image wordt geüpdate en er wordt een hash voor gemaakt maar dit wordt dan niet toegepast op de containers. Helaas hebben wij dit niet op tijd kunnen oplossen.
