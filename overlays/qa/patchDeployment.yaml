@@ -48,3 +48,16 @@ metadata:
 spec:
   selector:
     app: sdoqa
+
+---
+
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: qa-rollout
+spec:
+  template:
+    spec:
+      containers:
+        - name: rollout
+          image: delsynn/sdo:qa
