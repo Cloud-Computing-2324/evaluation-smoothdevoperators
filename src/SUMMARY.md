@@ -8,6 +8,7 @@
     - [Deployment](cicd/deployment.md)
     - [Advanced Gitops](cicd/advanced.md)
     - [Kustomize and Helm](cicd/kustomizeandhelm.md)
+    - [Argo Image Updater](cicd/argoimageupdater.md)
 
 # Autoscaling with Keda
 - [Autoscaling with Keda](keda/keda.md)
