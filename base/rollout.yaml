@@ -1,0 +1,10 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: REPLACE-ROLLOUT-NAME
+spec:
+  template:
+    spec:
+      containers:
+        - name: REPLACE-NAME
+          image: REPLACE-IMAGE
