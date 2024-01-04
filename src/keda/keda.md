@@ -27,10 +27,10 @@ spec:
   - type: cron
     metadata:
       timezone: Europe/Brussels
-      start: 0 6 * * *
-      end: 0 22 * * *
+      start: 0 8 * * *
+      end: 0 20 * * *
       desiredReplicas: "2"
 ```
-Zoals u kan zien zal deze 2 replicas aanmaken van onze pods tussen 6 en 22 uur en dit dan weer terugscalen naar de originele hoeveelheid. Dit kan gebruikt worden om extra pods aan te maken tijdens de drukkere uren om de grotere hoeveelheid van trafiek aan te kunnen.
+Zoals u kan zien zal deze 2 replicas aanmaken van onze pods tussen 8 en 20 uur en dit dan weer terugscalen naar de originele hoeveelheid. Dit kan gebruikt worden om extra pods aan te maken tijdens de drukkere uren om de grotere hoeveelheid van trafiek aan te kunnen.
 
 Dit was voldoende om Keda te doen werken.
