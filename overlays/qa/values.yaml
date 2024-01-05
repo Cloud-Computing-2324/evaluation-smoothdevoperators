@@ -2,7 +2,7 @@ server:
   ingress:
     enabled: true
     hosts:
-      - prometheus.example.com
+      - prometheus.sdoqa.com
   persistentVolume:
     enabled: false
   namespace: sdoqa
