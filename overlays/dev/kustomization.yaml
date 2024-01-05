@@ -5,7 +5,7 @@ nameSuffix: dev
 
 resources:
 - ../../base
-- hpa.yaml
+- cpuscaler.yaml
 
 patchesStrategicMerge:
   - patchDeployment.yaml
