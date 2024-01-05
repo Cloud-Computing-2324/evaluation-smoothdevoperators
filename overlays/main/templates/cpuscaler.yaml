@@ -8,10 +8,10 @@ spec:
     name: {{ .Values.appName }}
   pollingInterval: 20
   cooldownPeriod:  30
+  minReplicaCount: 1
   triggers:
   - type: cpu
     metricType: Utilization
     metadata:
       type: Utilization
       value: "80"
-      desiredReplicas: "4"
