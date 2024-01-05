@@ -20,6 +20,10 @@ spec:
           - name: http
             containerPort: 8080
             protocol: TCP
+          resources:
+            requests:
+              cpu: "5m"
+              memory: "32Mi"
   strategy:
     canary:
       steps:
