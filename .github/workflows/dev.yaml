@@ -39,6 +39,14 @@ jobs:
         run: npx markdownlint **/*.md
         continue-on-error: true
 
+      - name: setup spellcheck
+        run: npm install markdown-spellcheck
+      
+      # spellchecker lijkt nog niet te werken, heeft blijkbaar manuele correctie nodig  
+      - name: check for spelling errors
+        run: npx markdown-spellcheck **/*.md
+        continue-on-error: true
+
       - run: mdbook build
       - run: mdbook test
 
