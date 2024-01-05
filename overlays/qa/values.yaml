@@ -4041,7 +4041,7 @@ thanosRuler:
   podDisruptionBudget:
     enabled: false
     minAvailable: 1
-    maxUnavailable: ""
+    maxUnavailable: 1
 
   ingress:
     enabled: false
