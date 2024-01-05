@@ -6,6 +6,7 @@ metadata:
 spec:
   scaleTargetRef:
     name: {{ .Values.appName }}
+  minReplicaCount: 1
   pollingInterval: 20
   cooldownPeriod:  30
   triggers:
