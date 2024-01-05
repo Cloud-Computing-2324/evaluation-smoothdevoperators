@@ -20,17 +20,12 @@ spec:
           - name: http
             containerPort: 8080
             protocol: TCP
-strategy:
-  canary:
-    steps:
-    - setWeight: 20
-      duration: 60s
-    - setWeight: 40
-      duration: 60s
-    - setWeight: 60
-      duration: 60s
-    - setWeight: 80
-      duration: 60s
-    - setWeight: 100
-      duration: 60s
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - setWeight: 40
+      - setWeight: 60
+      - setWeight: 80
+      - setWeight: 100
 
