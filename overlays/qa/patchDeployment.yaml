@@ -16,9 +16,12 @@ spec:
       - name: sdowebsite
         image: delsynn/sdo:qa
         resources:
+          limits:
+            cpu: "1"
+            memory: "1Gi"
           requests:
-            memory: "256Mi"
             cpu: "100m"
+            memory: "100Mi"
 
 ---
 
@@ -48,16 +51,3 @@ metadata:
 spec:
   selector:
     app: sdoqa
-
----
-
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
-metadata:
-  name: qa-rollout
-spec:
-  template:
-    spec:
-      containers:
-        - name: rollout
-          image: delsynn/sdo:qa
