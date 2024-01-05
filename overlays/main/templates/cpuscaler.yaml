@@ -1,11 +1,11 @@
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
-  name: {{ .Values.appName }}-cpuscaler
-  namespace: {{ .Values.namespace }}
+  name: cpuscalersdo
+  namespace: sdodev
 spec:
   scaleTargetRef:
-    name: {{ .Values.appName }}
+    name: sdo
   pollingInterval: 20
   cooldownPeriod:  30
   minReplicaCount: 1
