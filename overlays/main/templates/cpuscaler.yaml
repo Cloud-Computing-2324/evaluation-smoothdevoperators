@@ -1,0 +1,17 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: {{ .Values.appName }}-cpuscaler
+  namespace: {{ .Values.namespace }}
+spec:
+  scaleTargetRef:
+    name: {{ .Values.appName }}
+  pollingInterval: 20
+  cooldownPeriod:  30
+  minReplicaCount: 1
+  triggers:
+  - type: cpu
+    metricType: Utilization
+    metadata:
+      type: Utilization
+      value: "80"
