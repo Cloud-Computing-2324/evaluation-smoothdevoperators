@@ -15,10 +15,6 @@ spec:
       containers:
       - name: sdowebsite
         image: delsynn/sdo:dev
-        resources:
-          requests:
-            memory: "32Mi"
-            cpu: "5m"
 
 ---
 
