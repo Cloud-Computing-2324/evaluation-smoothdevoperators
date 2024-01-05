@@ -73,6 +73,7 @@ jobs:
         continue-on-error: true
 
       - run: mdbook build
+      - run: mdbook test
 
       - name: Docker login
         env:

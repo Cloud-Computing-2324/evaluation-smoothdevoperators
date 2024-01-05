@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: sdoqa-rollout
+  namespace: sdoqa
+spec:
+  selector:
+    matchLabels:
+      app: sdoqa
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: sdoqa
+    spec:
+      containers:    
+        - name: rollout
+          image: delsynn/sdo:qa
+          ports:
+          - name: http
+            containerPort: 8080
+            protocol: TCP
+          resources:
+            requests:
+              cpu: "5m"
+              memory: "32Mi"
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - setWeight: 40
+      - setWeight: 60
+      - setWeight: 80
+      - setWeight: 100
+

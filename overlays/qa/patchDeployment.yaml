@@ -16,6 +16,9 @@ spec:
       - name: sdowebsite
         image: delsynn/sdo:qa
         resources:
+          limits:
+            cpu: "5m"
+            memory: "32Mi"
           requests:
             memory: "32Mi"
             cpu: "5m"
@@ -48,3 +51,4 @@ metadata:
 spec:
   selector:
     app: sdoqa
+
