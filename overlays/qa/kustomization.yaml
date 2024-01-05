@@ -6,6 +6,7 @@ nameSuffix: qa
 resources:
 - ../../base
 - rollout.yaml
+- rolloutservice.yaml
 
 patchesStrategicMerge:
 - patchDeployment.yaml
