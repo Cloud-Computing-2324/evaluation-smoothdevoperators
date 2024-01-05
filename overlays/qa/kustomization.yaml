@@ -3,9 +3,6 @@ kind: Kustomization
 
 nameSuffix: qa
 
-configurations:
-- rollout-transform.yaml
-
 resources:
 - ../../base
 
