@@ -1,0 +1,14 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: promscaler
+spec:
+  scaleTargetRef:
+    name: sdo
+  pollingInterval: 5
+  triggers:
+    - type: prometheus
+      metadata:
+        serverAddress: "http://prometheus-server:9090"
+        metricName: "http_requests_total"
+        threshold: "5"
