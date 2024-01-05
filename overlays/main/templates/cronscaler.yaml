@@ -1,7 +1,7 @@
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 metadata:
-  name: {{ .Values.appName }}-podscaler
+  name: {{ .Values.appName }}-cronscaler
   namespace: {{ .Values.namespace }}
 spec:
   scaleTargetRef:
@@ -15,8 +15,3 @@ spec:
       start: 0 8 * * *
       end: 0 20 * * *
       desiredReplicas: "2"
-  - type: cpu
-    metricType: Utilization
-    metadata:
-      type: Utilization
-      value: "80"
