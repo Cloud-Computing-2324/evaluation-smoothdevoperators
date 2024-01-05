@@ -18,6 +18,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+
       - name: Setup mdBook
         uses: peaceiris/actions-mdbook@v1
         with:
@@ -40,6 +41,11 @@ jobs:
 
       - name: setup spellcheck
         run: npm install markdown-spellcheck
+
+      # spellchecker lijkt nog niet te werken, heeft blijkbaar manuele correctie nodig  
+      - name: check for spelling errors
+        run: npx markdown-spellcheck **/*.md
+        continue-on-error: true
         
       - run: mdbook build
       - run: mdbook test
