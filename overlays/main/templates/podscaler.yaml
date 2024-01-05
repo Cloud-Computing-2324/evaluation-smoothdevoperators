@@ -6,6 +6,8 @@ metadata:
 spec:
   scaleTargetRef:
     name: {{ .Values.appName }}
+  pollingInterval: 20
+  cooldownPeriod:  30
   triggers:
   - type: cron
     metadata:
@@ -13,3 +15,8 @@ spec:
       start: 0 8 * * *
       end: 0 20 * * *
       desiredReplicas: "2"
+  - type: cpu
+    metricType: Utilization
+    metadata:
+      type: Utilization
+      value: "80"
