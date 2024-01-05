@@ -7,7 +7,6 @@ server:
     enabled: false
 
 additionalScrapeConfigs:
-
   - job_name: 'nginx-exporter'
     static_configs:
       - targets: ['sdoqa.sdoqa.svc.cluster.local:9113']
