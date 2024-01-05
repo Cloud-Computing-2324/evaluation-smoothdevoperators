@@ -11,17 +11,27 @@ spec:
     metadata:
       labels:
         app: sdoqa
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '9113'
     spec:
       containers:
       - name: sdowebsite
         image: delsynn/sdo:qa
         resources:
-          limits:
-            cpu: "5m"
-            memory: "32Mi"
           requests:
-            memory: "32Mi"
-            cpu: "5m"
+            memory: 32Mi
+            cpu: 5m
+      - name: nginx-exporter
+        image: nginx/nginx-prometheus-exporter:0.10.0
+        args:
+          - -nginx.scrape-uri=http://localhost:80/stub_status
+        resources:
+          requests:
+            memory: 32Mi
+            cpu: 5m
+        ports:
+            - containerPort: 9113
 
 ---
 
