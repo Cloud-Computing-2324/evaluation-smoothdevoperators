@@ -1,16 +1,17 @@
 # Summary
 
 [Introductie](intro.md)
-[CI/CD Intro](cicdintro.md)
 
-# CI/CD & advanced GitOps
-
-[Cicdintro](cicdintro.md)
+# CI/CD & Advanced GitOps
+- [CI/CD](cicd/cicd.md)
+    - [Docker](cicd/docker.md)
+    - [Deployment](cicd/deployment.md)
+    - [Advanced Gitops](cicd/advanced.md)
+    - [Kustomize and Helm](cicd/kustomizeandhelm.md)
+    - [Argo Image Updater](cicd/argoimageupdater.md)
 
 # Autoscaling with Keda
-
-[Aanpak](kedaintro.md)
+- [Autoscaling with Keda](keda/keda.md)
 
 # Gateway API Spec
-
-[Aanpak](gatewayintro.md)
+- [Gateway API Spec](gateway/gateway.md)
