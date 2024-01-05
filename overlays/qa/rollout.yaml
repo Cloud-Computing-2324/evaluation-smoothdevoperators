@@ -14,8 +14,8 @@ spec:
         app: sdoqa
     spec:
       containers:    
-        - name: sdoqa-rollout
-          image: delsynn/sdo:latest
+        - name: rollout
+          image: delsynn/sdo:qa
           ports:
           - name: http
             containerPort: 8080
