@@ -5,10 +5,11 @@ server:
       - prometheus.example.com
   persistentVolume:
     enabled: false
-
+  namespace: sdoqa
 
 additionalScrapeConfigs:
 
   - job_name: 'nginx-exporter'
     static_configs:
       - targets: ['prometheus-nginx-exporter:9113']
+    namespace: sdoqa
