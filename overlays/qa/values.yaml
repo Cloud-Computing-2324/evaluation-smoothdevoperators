@@ -1,0 +1,7 @@
+server:
+  ingress:
+    enabled: true
+    hosts:
+      - prometheus.example.com
+  persistentVolume:
+    enabled: false
