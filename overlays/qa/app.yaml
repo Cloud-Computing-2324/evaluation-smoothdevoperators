@@ -19,4 +19,7 @@ spec:
   info:
     - name: 'sdoqa'
       value: 'https://sdoqa.38.cc.ucll.cloud'
-
+  syncPolicy:  
+    automated:  
+      prune: true
+      selfHeal: true

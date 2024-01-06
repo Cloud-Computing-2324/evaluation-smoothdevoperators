@@ -1,0 +1,15 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: cpuscalersdo
+spec:
+  scaleTargetRef:
+    name: sdodev
+  minReplicaCount: 1
+  maxReplicaCount: 3
+  triggers:
+  - type: cpu
+    metricType: Utilization
+    metadata:
+      value: "50"
+      containerName: sdowebsite

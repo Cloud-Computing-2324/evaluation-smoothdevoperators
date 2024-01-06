@@ -19,4 +19,7 @@ spec:
   info:
     - name: 'sdodev'
       value: 'https://sdodev.38.cc.ucll.cloud'
-
+  syncPolicy:  
+    automated:  
+      prune: true
+      selfHeal: true
