@@ -12,6 +12,7 @@
 # Autoscaling with Keda
 - [Cronscaler](keda/cronscaler.md)
 - [Cpuscaler](keda/cpuscaler.md)
+- [Prometheus](keda/prometheus.md)
 
 # Gateway API Spec
 - [Gateway API Spec](gateway/gateway.md)
