@@ -9,10 +9,10 @@ spec:
   hostnames:
     - "website.47.cc.ucll.cloud"  # Replace with your domain
   rules:
-    - matches:
-        - path:
-            type: Exact
-            value: /
-      backendRefs:
-        - name: website-service
-          port: 80
+    - backendRefs:
+      - name: website-more-traffic
+        port: 80
+        weight: 70
+      - name: website-less-traffic
+        port: 80
+        weight: 30

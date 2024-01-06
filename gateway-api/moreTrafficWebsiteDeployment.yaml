@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: website
+  name: website-more-traffic
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: website
+      app: website-more-traffic
   template:
     metadata:
       labels:
-        app: website
+        app: website-more-traffic
     spec:
       containers:
       - name: website

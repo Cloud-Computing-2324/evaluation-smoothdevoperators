@@ -15,3 +15,4 @@
 
 # Gateway API Spec
 - [Gateway API Spec](gateway/gateway.md)
+- [Load Balancing](gateway/loadbalancing.md)
