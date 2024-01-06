@@ -1,0 +1,6 @@
+nginx:
+  enabled: true
+  ingress:
+    enabled: true
+    hosts:
+      - nginx-exporter.sdoqa.com

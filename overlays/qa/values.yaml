@@ -1,0 +1,12 @@
+server:
+  ingress:
+    enabled: true
+    hosts:
+      - prometheus.38.cc.ucll.cloud
+  persistentVolume:
+    enabled: false
+
+additionalScrapeConfigs:
+  - job_name: 'nginx-exporter'
+    static_configs:
+      - targets: ['sdoqa.sdoqa.svc.cluster.local:9113']

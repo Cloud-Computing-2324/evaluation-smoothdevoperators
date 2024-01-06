@@ -7,6 +7,8 @@ resources:
 - ../../base
 - rollout.yaml
 - rolloutservice.yaml
+- promscaler.yaml
+- nginxExporterDeployment.yaml
 
 patchesStrategicMerge:
 - patchDeployment.yaml

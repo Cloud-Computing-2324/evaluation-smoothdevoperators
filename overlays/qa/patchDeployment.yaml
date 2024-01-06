@@ -11,18 +11,18 @@ spec:
     metadata:
       labels:
         app: sdoqa
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/port: '9113'
     spec:
       containers:
       - name: sdowebsite
         image: delsynn/sdo:qa
         resources:
-          limits:
-            cpu: "5m"
-            memory: "32Mi"
           requests:
-            memory: "32Mi"
-            cpu: "5m"
-
+            memory: 32Mi
+            cpu: 5m
+            
 ---
 
 apiVersion: networking.k8s.io/v1
@@ -51,4 +51,3 @@ metadata:
 spec:
   selector:
     app: sdoqa
-
