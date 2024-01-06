@@ -5,6 +5,8 @@ metadata:
 spec:
   scaleTargetRef:
     name: sdodev
+  minReplicaCount: 1
+  maxReplicaCount: 3
   triggers:
   - type: cpu
     metricType: Utilization
