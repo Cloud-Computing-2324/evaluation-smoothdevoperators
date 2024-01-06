@@ -3,15 +3,15 @@
 [Introductie](intro.md)
 
 # CI/CD & Advanced GitOps
-- [CI/CD](cicd/cicd.md)
-    - [Docker](cicd/docker.md)
-    - [Deployment](cicd/deployment.md)
-    - [Advanced Gitops](cicd/advanced.md)
-    - [Kustomize and Helm](cicd/kustomizeandhelm.md)
-    - [Argo Image Updater](cicd/argoimageupdater.md)
+- [Docker](cicd/docker.md)
+- [Deployment](cicd/deployment.md)
+- [Advanced Gitops](cicd/advanced.md)
+- [Kustomize and Helm](cicd/kustomizeandhelm.md)
+- [Argo Image Updater](cicd/argoimageupdater.md)
 
 # Autoscaling with Keda
-- [Autoscaling with Keda](keda/keda.md)
+- [Cronscaler](keda/cronscaler.md)
+- [Cpuscaler](keda/cpuscaler.md)
 
 # Gateway API Spec
 - [Gateway API Spec](gateway/gateway.md)

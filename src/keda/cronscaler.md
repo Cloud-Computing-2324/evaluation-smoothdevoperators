@@ -1,4 +1,4 @@
-# Keda Autoscaler
+# Keda Cronscaler
 
 We hebben voor de main branch ook Keda geïnstalleerd, dit is een autoscaler die meer pods gaat genereren van onze applicatie aan de hand van bepaalde triggers.
 
@@ -33,4 +33,8 @@ spec:
 ```
 Zoals u kan zien zal deze 2 replicas aanmaken van onze pods tussen 8 en 20 uur en dit dan weer terugscalen naar de originele hoeveelheid. Dit kan gebruikt worden om extra pods aan te maken tijdens de drukkere uren om de grotere hoeveelheid van trafiek aan te kunnen.
 
-Dit was voldoende om Keda te doen werken.
+Dit was voldoende om de Keda cronscaler te doen werken.
+
+De screenshot hieronder werd genomen om 12 uur en u ziet dat er 4 uur geleden een nieuwe pod werd aangemaakt om aan de cronscaler te voldoen, deze zal dan ook weer verdwijnen om 20:00 uur:
+
+![Cronscaler Pod](cronscalerpod.png)
