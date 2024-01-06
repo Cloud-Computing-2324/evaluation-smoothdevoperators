@@ -1,18 +1,16 @@
 apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
+kind: ScaledObject
 metadata:
   name: cpuscalersdo
 spec:
   scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: sdo
+    name: sdodev
   minReplicas: 1
   maxReplicas: 10
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 50
+  triggers:
+  - type: cpu
+    metricType: Utilization
+    metadata:
+      type: Utilization
+      value: "50"
+      containerName: sdowebsite
