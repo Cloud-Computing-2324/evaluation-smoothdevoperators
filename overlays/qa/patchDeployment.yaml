@@ -23,7 +23,7 @@ spec:
             memory: 32Mi
             cpu: 5m
       - name: nginx-exporter
-        image: nginx/nginx-prometheus-exporter:0.10.0
+        image: nginx/nginx-prometheus-exporter:latest
         args:
           - -nginx.scrape-uri=http://localhost:80/stub_status
         resources:
