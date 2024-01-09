@@ -2,8 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   annotations:
-    argocd-image-updater.argoproj.io/image-list: sdoqa=delsynn/sdo:qa
-    argocd-image-updater.argoproj.io/sdoqa.update-strategy: digest
+    argocd-image-updater.argoproj.io/image-list: sdodev=delsynn/sdo:qa
+    argocd-image-updater.argoproj.io/sdodev.update-strategy: digest
     argocd-image-updater.argoproj.io/git-branch: qa
   name: sdoqa
   namespace: argo
@@ -14,7 +14,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Cloud-Computing-2324/evaluation-smoothdevoperators.git
-    path: overlays/qa
+    path: overlays/dev
     targetRevision: qa
   info:
     - name: 'sdoqa'
