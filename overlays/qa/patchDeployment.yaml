@@ -17,8 +17,8 @@ spec:
         image: delsynn/sdo:qa
         resources:
           requests:
-            memory: 32Mi
-            cpu: 5m
+            memory: "32Mi"
+            cpu: "5m"
             
 ---
 
