@@ -11,9 +11,6 @@ spec:
     metadata:
       labels:
         app: sdoqa
-      annotations:
-        prometheus.io/scrape: 'true'
-        prometheus.io/port: '9113'
     spec:
       containers:
       - name: sdowebsite
