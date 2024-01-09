@@ -22,16 +22,6 @@ spec:
           requests:
             memory: 32Mi
             cpu: 5m
-      - name: nginx-exporter
-          image: 'nginx/nginx-prometheus-exporter:0.10.0'
-          args:
-            - '-nginx.scrape-uri=http://localhost/nginx_status'
-          resources:
-            limits:
-              memory: 128Mi
-              cpu: 50m
-          ports:
-            - containerPort: 9113
             
 ---
 
