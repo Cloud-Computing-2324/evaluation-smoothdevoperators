@@ -1,3 +1,5 @@
+![Smooth](smooth.png)
+
 # TODO
 
 - Renovate Bot config
