@@ -1,4 +1,4 @@
-![Smooth](smooth.png)
+![Smooth](smooth.png)  
 
 # Useful links
 
