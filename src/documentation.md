@@ -2,7 +2,7 @@
 
 # Useful links
 
-[Smooth Operators](https://www.youtube.com/watch?v=uqjWkjp1kxQ) {:target="_blank"}
+[Smooth Operators](https://www.youtube.com/watch?v=uqjWkjp1kxQ)
 [Smooth Operator](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 ## Github Actions, CI/CD
